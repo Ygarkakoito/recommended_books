@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recommended Books</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Recommended Books</h1>
+
+    {% if books %}
+        <ul>
+            {% for book in books %}
+                <li>
+                    <h2>{{ book.title }}</h2>
+                    <p>Genre: {{ book.genre }}</p>
+                    <p>Category: {{ book.category }}</p>
+                    <p>Century: {{ book.century }}</p>
+                    <p>Country: {{ book.country }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No books with this filter.</p>
+    {% endif %}
+
+    <br>
+    <button onclick="goBack()" style="background-color: #6a70b0; color: #fff;border-radius: 5px;">Back</button>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

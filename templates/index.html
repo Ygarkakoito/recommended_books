@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Recommendation System</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Скрыть дополнительные фильтры при загрузке страницы
+            $("#additional-filters").hide();
+
+            // Отобразить дополнительные фильтры при нажатии кнопки
+            $("#show-filters-btn").click(function() {
+                $("#additional-filters").toggle();
+            });
+
+            // Обработка клика на тексте жанра
+            $(".genre-label").click(function() {
+                var checkbox = $(this).prev();
+                checkbox.prop("checked", !checkbox.prop("checked"));
+            });
+
+            // Обработка клика на тексте категории
+            $(".category-label").click(function() {
+                var checkbox = $(this).prev();
+                checkbox.prop("checked", !checkbox.prop("checked"));
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Book Recommendation System</h1>
+    <form action="/recommend" method="post">
+        <h2>Select Genres:</h2>
+        <label class="genre-label">
+            <input type="checkbox" name="genre" value="Fantasy">
+            Fantasy
+        </label><br>
+        <label class="genre-label">
+            <input type="checkbox" name="genre" value="Mystery">
+            Mystery
+        </label><br>
+        <label class="genre-label">
+            <input type="checkbox" name="genre" value="Romance">
+            Romance
+        </label><br>
+        <label class="genre-label">
+            <input type="checkbox" name="genre" value="Sci-Fi">
+            Sci-Fi
+        </label><br>
+
+        <h2>Select Categories:</h2>
+        <label class="category-label">
+            <input type="checkbox" name="category" value="Adventure">
+            Adventure
+        </label><br>
+        <label class="category-label">
+            <input type="checkbox" name="category" value="Thriller">
+            Thriller
+        </label><br>
+        <label class="category-label">
+            <input type="checkbox" name="category" value="Drama">
+            Drama
+        </label><br>
+
+         <br>
+        <button type="button" id="show-filters-btn">Show Additional Filters</button>
+
+        <div id="additional-filters">
+            <h2>Additional Filters:</h2>
+            <label for="century">Century:</label>
+            <select name="century" id="century">
+                <option value="Any">Any</option>
+                <option value="19th">19th</option>
+                <option value="20th">20th</option>
+                <option value="21st">21st</option>
+            </select>
+
+            <br><br>
+
+            <label for="country">Author's Country:</label>
+            <select name="country" id="country">
+                <option value="Any">Any</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+                <option value="Canada">Canada</option>
+            </select>
+        </div>
+
+        <br>
+        <input type="submit" value="Get Recommendations">
+    </form>
+</body>
+</html>

@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E6E6FA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    color: #333;
+    text-align: left;
+    margin-left: 10px;
+}
+
+form {
+    margin: 20px 0;
+    text-align: left;
+}
+
+input[type="submit"],
+
+input[type="checkbox"],
+select {
+    padding: 10px 20px;
+    background-color: #6a70b0;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #6a70b0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+h1, h2 {
+    margin-right: 100px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.select-container {
+    margin-bottom: 10px;
+}
+
+.select-container select {
+    width: 200px;
+}
+#show-filters-btn {
+    background-color: #6a70b0;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-bottom: 10px; /* Добавлено свойство для создания пространства между кнопками */
+}
+
+#show-filters-btn:hover {
+    background-color: #6a70b0;
+}
