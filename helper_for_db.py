@@ -19,7 +19,7 @@ cursor.execute('''
 conn.commit()
 
 # Заполнение таблицы из CSV файла
-with open('C:/Users/Windows/Desktop/пайчарм/pythonProject5/book.csv', 'r', newline='') as file:
+with open('book.csv', 'r', newline='') as file:
     reader = csv.DictReader(file)
     for row in reader:
         cursor.execute('''
